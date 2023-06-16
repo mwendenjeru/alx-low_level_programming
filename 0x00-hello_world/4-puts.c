@@ -2,7 +2,7 @@
 /**
  * main - Prints string using puts function
  *
- * Return - Always 0
+ * Return: Always 0
  */
 int main(void)
 {
