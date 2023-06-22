@@ -2,6 +2,7 @@
 /**
  * print_number - Prints an integer
  * @n: The integer to be printed
+ *  function that prints an integer
  */
 void print_number(int n)
 {
@@ -12,8 +13,10 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
+	
 	while ((n / divisor) >= 10)
 		divisor *= 10;
+	
 	while (divisor != 0)
 	{
 		_putchar((n / divisor) + '0');
