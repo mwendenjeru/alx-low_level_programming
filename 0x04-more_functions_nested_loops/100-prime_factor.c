@@ -14,6 +14,7 @@ int main(void)
 
 	n = 612852475143;
 	largest_factor = -1;
+	
 	while (n % 2 == 0)
 	{
 		largest_factor = 2;
