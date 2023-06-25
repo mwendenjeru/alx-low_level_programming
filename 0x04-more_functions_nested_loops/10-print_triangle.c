@@ -5,17 +5,24 @@
  */
 void print_triangle(int size)
 {
-	int row, col;
-
 	if (size <= 0)
 	{
 		_putchar('\n');
-		return;
 	}
-	for (row = 0; row < size; row++)
+	else
 	{
-		for (col = 0; col <= row; col++)
-			_putchar('#');
-		_putchar('\n');
+		int a, b;
+		for (a = 1; a <= size; a++)
+		{
+			for (b = a; b < size; b++)
+			{
+				_putchar(32);
+			}
+			for (b = 1; b<= a; b++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
 	}
 }
