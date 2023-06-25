@@ -4,9 +4,6 @@
 /**
  * main - entry point
  * Return: Always 0
- * largest_prime_factor - Finds largest prime factor
- * @n: The number to find the largest prime factor of
- * Return: The largest prime factor of the number
  */
 
 int main(void)
