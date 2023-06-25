@@ -30,6 +30,7 @@ int main(void)
 	}
 	if (n > 2)
 		largest_factor = n;
+	
 	printf("%ld\n", largest_factor);
 	return (0);
 }
