@@ -19,9 +19,9 @@ int main(void)
 	}
 	for (i = 3; i <= sqrt(n); i = i + 2)
 	{
-		while (n % i == 0)
-		{
-		       largest_factor = i;
+	while (n % i == 0)
+	{
+		largest_factor = i;
 			n = n / i;
 		}
 	}
