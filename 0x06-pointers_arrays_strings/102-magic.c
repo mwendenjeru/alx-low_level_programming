@@ -5,11 +5,10 @@
  */
 int main(void)
 {
-	int a[5] = {1, 2, 3, 4, 5};
-	int *p;
+	int a[5] = {0, 1, 2, 3, 4};
+	int *p = a + 2;
 
-	p = &a[2];
-	*(p + 1) = 98;
-	printf("a[2] = %d\n", *(p + 1));
+	*(p + 0) = 98;
+	printf("a[2] = %d\n", a[2]);
 	return (0);
 }
