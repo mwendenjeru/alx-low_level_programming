@@ -1,19 +1,29 @@
 #include "main.h"
 /**
- * _strlen - Returns the length of a string
+ * _strlen_recursion - Calculates the length of a string recursively
  * @s: The string
  * Return: The length of the string
  */
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
-	int length = 0;
-
-	while (*s != '\0')
-	{
-		length++;
-		s++;
-	}
-	return (length);
+	if (*s == '\0')
+		return (0);
+	return (1 + _strlen_recursion(s + 1));
+}
+/**
+ * compare_chars - Compares characters recursively for palindrome check
+ * @s: The string
+ * @start: The starting index
+ * @end: The ending index
+ * Return: 1 if characters match, 0 otherwise
+ */
+int compare_chars(char *s, int start, int end)
+{
+	if (start >= end)
+		return (1);
+	if (s[start] != s[end])
+		return (0);
+	return (compare_chars(s, start + 1, end - 1));
 }
 /**
  * is_palindrome - Checks if a string is a palindrome
@@ -22,15 +32,7 @@ int _strlen(char *s)
  */
 int is_palindrome(char *s)
 {
-	int len = _strlen(s);
-	int i;
+	int len = _strlen_recursion(s);
 
-	if (len <= 1)
-		return (1);
-	if (s[0] != s[len - 1])
-		return (0);
-	for (i = 0; i < len - 2; i++)
-		s[i] = s[i + 1];
-	s[len - 2] = '\0';
-	return (is_palindrome(s));
+	return (compare_chars(s, 0, len - 1));
 }
