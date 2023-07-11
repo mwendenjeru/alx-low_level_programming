@@ -20,6 +20,13 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
+	if (*str == ' ')
+	{
+		while (*str == ' ')
+			str++;
+		if (*str == '\0')
+			return (NULL);
+	}
 	num_words = count_words(str);
 	words = malloc(sizeof(char *) * (num_words + 1));
 	if (words == NULL)
