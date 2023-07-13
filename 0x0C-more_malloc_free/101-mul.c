@@ -3,6 +3,10 @@
 #include <ctype.h>
 #include <string.h>
 #include "main.h"
+
+int multiply(char *num1, char *num2);
+int validate_input(char *num1, char *num2);
+
 /**
  * main - Entry point of the program
  * @argc: Number of command-line arguments
@@ -40,8 +44,9 @@ int multiply(char *num1, char *num2)
 {
 	int len1 = strlen(num1);
 	int len2 = strlen(num2);
+	int i, j, k, product, carry;
 	int *res;
-	int i, j, carry, product;
+	int result = 0;
 
 	res = calloc(len1 + len2, sizeof(int));
 	for (i = len1 - 1; i >= 0; i--)
@@ -49,17 +54,21 @@ int multiply(char *num1, char *num2)
 		carry = 0;
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			product = (num1[i] - '0') * (num2[j] - '0') + carry + res[i + j + 1];
+			product = (num1[i] - '0') * (num2[j] - '0') + res[i + j + 1] + carry;
 			carry = product / 10;
 			res[i + j + 1] = product % 10;
 		}
 		res[i] += carry;
 	}
-	i = 0;
-	while (res[i] == 0 && i < len1 + len2 - 1)
-		i++;
+	k = 0;
+	while (k < len1 + len2 && res[k] == 0)
+		k++;
+	for (; k < len1 + len2; k++)
+	{
+		result = result * 10 + res[k];
+	}
 	free(res);
-	return (i);
+	return (result);
 }
 /**
  * validate_input - Validate if numbers consist only of digits
