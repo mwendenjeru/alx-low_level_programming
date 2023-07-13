@@ -49,12 +49,12 @@ int multiply(char *num1, char *num2)
 	int result = 0;
 
 	res = calloc(len1 + len2, sizeof(int));
-	for (i = len1 - 1; i >= 0; i--)
+	for (i = len2 - 1; i >= 0; i--)
 	{
 		carry = 0;
-		for (j = len2 - 1; j >= 0; j--)
+		for (j = len1 - 1; j >= 0; j--)
 		{
-			product = (num1[i] - '0') * (num2[j] - '0') + res[i + j + 1] + carry;
+			product = (num2[i] - '0') * (num1[j] - '0') + res[i + j + 1] + carry;
 			carry = product / 10;
 			res[i + j + 1] = product % 10;
 		}

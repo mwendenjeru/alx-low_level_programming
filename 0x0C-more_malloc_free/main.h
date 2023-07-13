@@ -9,6 +9,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int validate_input(char *num1, char *num2);
 int _putchar(char c);
 int multiply(char *num1, char *num2);
-int main(int argc, char *argv[]);
 
 #endif /* MAIN_H */
