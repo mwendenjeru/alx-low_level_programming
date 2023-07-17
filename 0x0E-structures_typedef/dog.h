@@ -9,13 +9,23 @@
  * @age: Float representing the age of the dog
  * @owner: Pointer to a character representing the owner of the dog
  */
-
 struct dog
 {
 	char *name;
 	float age;
 	char *owner;
 };
+
+/**
+ * New type dog_t as a new type struct dog
+ */
+
+typedef struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+} dog_t;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
