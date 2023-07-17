@@ -10,6 +10,6 @@
  */
 int main(void)
 {
-	printf("Compiled from file: %s\n", FILENAME);
+	printf("%s\n", __BASE_FILE__);
 	return (0);
 }
